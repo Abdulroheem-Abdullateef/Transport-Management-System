@@ -1,0 +1,99 @@
+﻿<div class="header-bottom sticky-bar sticky-white-bg">
+    <div class="custom-container">
+        <div class="header-wrap header-space-between position-relative">
+            <div class="logo logo-width-1 logo-hm3">
+                <a asp-controller="home" asp-action="index"><img src="~/images/ncb_main.png" style="height:50px" alt="logo"></a>
+            </div>
+            <div class="main-menu main-menu-grow main-menu-padding-1 main-menu-lh-1 main-menu-mrg-1 hm3-menu-padding d-none d-lg-block hover-boder">
+                <nav>
+                    <ul>
+                        <li>
+                            <a class="active" asp-action="index" asp-controller="home">Home</a>
+                        </li>
+
+                        <li>
+                            <a asp-action="about" asp-controller="home">About</a>
+                        </li>
+                        <li>
+                            <a asp-action="contact" asp-controller="home">Contact</a>
+                        </li>
+                        <li>
+                            <a asp-action="faq" asp-controller="home">FAQ</a>
+                        </li>
+
+                        @if (User != null && User.Identity.IsAuthenticated)
+
+                        {
+                            <li>
+                                <a href="#">@User.Identity.Name</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Account" asp-action="Logout"><i class="fas fa-user"></i> Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Login"><i class="fas fa-user"></i>Login</a>
+                        }
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-action-right">
+                @*<div class="search-style-1 d-none d-lg-block">
+                    <form action="#">
+                        <input type="text" placeholder="Search for items…">
+                        <button type="submit"> <i class="far fa-search"></i> </button>
+                    </form>
+                </div>
+                <div class="header-action header-action-hm3">
+                    <div class="header-action-icon">
+                        <a href="wishlist.html"><i class="far fa-heart"></i></a>
+                    </div>*@
+                   @* <div class="header-action-icon">
+                        <a asp-controller="cart" asp-action="index">
+                            <i class="far fa-shopping-cart"></i>
+                            <span class="pro-count blue" id="itemCount">0</span>
+                        </a>
+                        <div class="cart-dropdown-wrap">
+                            <ul id="cartItems">
+                                
+                            </ul>
+                            <div class="shopping-cart-footer">
+                                <div class="shopping-cart-total">
+                                    <h4>Total <span id="cartTotal">₦00.00</span></h4>
+                                </div>
+                                <div class="shopping-cart-button">
+                                    <a asp-controller="cart" asp-action="index">View cart</a>
+                                    <a id="checkoutLink" asp-controller="cart" asp-action="checkout">Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="header-action-icon header-action-mrg-none2 header-info header-info-right">
+                        <ul>
+                            <li>
+                                <div class="">
+                                    <a class="language-dropdown-active" href="#">Account<i class="fa fa-chevron-down"></i></a>
+                                 </div>
+                                <ul class="language-dropdown">
+                                    <li><a id="userInfo" href="javascript:void(0)"></a></li>
+                                    <li id="login"><a asp-action="login" asp-controller="account">Login</a></li>
+                                    <li id="register"><a asp-action="RegisterPassenger" asp-controller="account">Sign up</a></li>
+                                    <li id="login"><a asp-action="Logout" asp-controller="account">Logout</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                   
+                    <div class="header-action-icon d-block d-lg-none">
+                        <div class="burger-icon">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

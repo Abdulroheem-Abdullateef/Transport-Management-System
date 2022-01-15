@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Admin";
+}
+<div class="breadcrumb-area breadcrumb-area-padding-2 bg-gray-2">
+    <div class="custom-container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a asp-controller="home" asp-action="index">Home</a>
+                </li>
+                <li class="active">register </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="login-register-area pt-75 pb-75">
+    <div class="container">
+        <div class="login-register-wrap">
+            <div class="login-register-title text-center">
+                <h1>Register a new bus driver</h1>
+            </div>
+            <div class="login-register-form">
+                <form asp-action="RegisterDriver">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+
+                            <div class="login-register-input-style input-style">
+                                <label>First name *</label>
+                                <input type="text" name="Firstname" required>
+                            </div>
+                            <div class="login-register-input-style input-style">
+                                <label>Last name *</label>
+                                <input type="text" name="Lastname" required>
+                            </div>
+                            <div class="login-register-input-style input-style">
+                                <label>Email address *</label>
+                                <input type="email" name="Email" required>
+                            </div>
+                            <div class="login-register-input-style input-style">
+                                <label>Phone *</label>
+                                <input type="text" name="PhoneNumber" required>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="login-register-input-style input-style">
+                                <label>Country *</label>
+                                <input type="text" name="Country" required>
+                            </div>
+                            <div class="login-register-input-style input-style">
+                                <label>Password *</label>
+                                <input type="password" name="Password" required>
+                            </div>
+
+                            <div class="login-register-btn">
+                                <button type="submit">Register</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> @ViewData["Title"] - ePinMart </title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://epinmart.com">
+    <link rel="canonical" href="https://epinmart.com" />
+
+    <!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewData["Title"] - ePinMart" />
+    <meta property="og:url" content="https://epinmart.com" />
+    <meta property="og:site_name" content="ePinMart" />
+    <!-- For the og:image content, replace the # with a link of an image -->
+    <meta property="og:image" content="https://epinmart.com/images/bytestores.png" />
+    <meta property="og:description" content="" />
+    <!-- Add site Favicon -->
+    <link rel="icon" href="https://epinmart.com/~/assets/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="https://epinmart.com/~/assets/favicon.ico" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://epinmart.com/~/assets/favicon.ico" />
+    <meta name="msapplication-TileImage" content="https://epinmart.com/~/assets/favicon.ico" />
+
+    <link rel="stylesheet" href="~/assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" integrity="sha512-GFm9O0arU56sgj5HX9IrEtyDqKx3XhbwiTA75XTWW5JoyKnhzQ1Qj3yYbA+MLmy4p+dg5K77NCVxa3nalA96LQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above
+    <link rel="stylesheet" href="~/assets/css/style.min.css"> -->
+
+    <script type="application/ld+json">
+        {
+            "@@context": "https://epinmart.com",
+            "@@type": "WebSite",
+            "name": "ePinMart",
+            "url": "https://epinmart.com"
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <header class="header-area header-height-3">
+            <partial name="_InfoHeaderPartial" />
+            <partial name="_NavHeaderPartial" />
+        </header>
+        @RenderBody()
+        <partial name="_Footer2Partial" />
+        <div class="tm-demo-options-wrapper">
+            <div class="tm-demo-options-toolbar tooltip-style-2">
+                <a aria-label="Select Demo" class="view-demo-btn-active" href="#"><i class="far fa-ruler-triangle"></i></a>
+                <a aria-label="Support Channel" target="_blank" href="https://hasthemes.com/contact-us/"><i class="far fa-life-ring"></i></a>
+                <a aria-label="Description" href="#"><i class="far fa-book"></i></a>
+                <a target="_blank" aria-label="Purchase Medizin" href="https://1.envato.market/c/417168/275988/4415?subId1=hastheme&subId2=demo&subId3=https%3A%2F%2Fthemeforest.net%2Fuser%2Fbootxperts%2Fportfolio&u=https%3A%2F%2Fthemeforest.net%2Fuser%2Fbootxperts%2Fportfolio"><i class="far fa-shopping-cart"></i></a>
+            </div>
+            <div class="tm-demo-panel text-center">
+                <div class="tm-demo-panel-header">
+                    <h3> Medizin - Medical eCommerce Template</h3>
+                    <p> Medizin is our brand new Medical Store eCommerce Template with the specialized design for Hospital, Clinics, Medical Suppliers, Medical Stores, Pharmacy Stores, Medicine Store, Health Care Centers, Corona Virus Prevention, and Clinical Laboratory Equipment eCommerce Websites.</p>
+                    <div class="tm-demo-btn">
+                        <a target="_blank" href="https://1.envato.market/c/417168/275988/4415?subId1=hastheme&subId2=demo&subId3=https%3A%2F%2Fthemeforest.net%2Fuser%2Fbootxperts%2Fportfolio&u=https%3A%2F%2Fthemeforest.net%2Fuser%2Fbootxperts%2Fportfolio"> <i class="far fa-shopping-cart"></i> Buy Now </a>
+                    </div>
+                </div>
+                <div class="quick-option-list tooltip-style-4 tooltip-style-4-black">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <a aria-label="Medical Supplies" target="_blank" href="index.html"><img src="~/assets/images/demo/demo-1.jpg" alt="demo"></a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <a aria-label="Mega Shop" target="_blank" href="index-2.html"><img src="~/assets/images/demo/demo-2.jpg" alt="demo"></a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <a aria-label="Medical Equipment" target="_blank" href="index-3.html"><img src="~/assets/images/demo/demo-3.jpg" alt="demo"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <partial name="_InfoHeaderMobilePartial" />
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above-->
+    <script src="~/assets/js/vendor/vendor.min.js"></script>
+    <script src="~/assets/js/plugins/plugins.min.js"></script>
+    <script src="~/js/bootstrap-notify.js"></script>
+    <!-- Main JS -->
+    <script src="~/assets/js/main.js"></script>
+    <script src="~/js/notification.js"></script>
+    
+    @await RenderSectionAsync("scripts", false)
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@using TransportManagementSystem.Enums
+<div class="slider-area">
+    <div class="hero-slider-active-2 dot-style-1 dot-style-1-position-1">
+        <div class="single-hero-slider single-animation-wrap slider-height-3 custom-d-flex custom-align-item-center hm3-bg-color-1">
+            <div class="custom-container">
+                <div class="row align-items-center slider-animated-1">
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="hero-slider-content-3">
+                            @*<h4 class="animated">Only <span>$1000</span> </h4>*@
+                            <h1 class="animated">Book Cheap Bus Online</h1>
+                            <p class="animated">Getting Genuine, Safe and Cheap Bus Tickets</p>
+                            <div class="btn-style-1">
+                                <a class="animated btn-1-padding-5" asp-action="products" asp-controller="home">Book Now </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="single-slider-img single-slider-img-4">
+                            <img class="animated" src="~/images/sliders/OIP.jpg" alt="">
+                            <div class="slider-product-price slider-product-position5 slider-animated-1 animated">
+                                <h3>
+                                    Best
+                                    <span class="mrg-top">Transport Company</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-hero-slider single-animation-wrap slider-height-3 custom-d-flex custom-align-item-center bg-img" style="background-image:url(~/assets/images/slider/hm3-slider-bg-2.jpg);">
+            <div class="custom-container">
+                <div class="row align-items-center slider-animated-1">
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="hero-slider-content-4">
+                            <div class="slider-product-offer-wrap-2 animated">
+                                <div class="slider-product-offer-2">
+                                    <span class="yellow">Safe </span>
+                                </div>
+                                <p>Enjoy your Travel </p>
+                            </div>
+                            <h1 class="animated mrg-bottom">Fun-filled Journey <br>  Book e-tickets Online. </h1>
+                            <p class="animated">Travel with our High Class Bus </p>
+                            <div class="btn-style-1">
+                                <a class="animated btn-1-padding-5" asp-action="login" asp-controller="account">Book Now and get Discount </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="single-slider-img single-slider-img-5">
+                            <img class="animated" src="~/images/sliders/page-15.jpeg" alt="eTransport">
+                            <div class="slider-product-price slider-product-position6 slider-animated-1 animated">
+                                <h3>
+                                    <span>It is </span>
+                                    Cheap
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-hero-slider single-animation-wrap slider-height-3 custom-d-flex custom-align-item-center hm3-bg-color-3">
+            <div class="custom-container">
+                <div class="row align-items-center slider-animated-1">
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="hero-slider-content-3">
+                            <h3 class="animated">Bus Tickets</h3>
+                            <h1 class="animated font-inc">Have Bus Tickets?<br>Be a Transport Agent.</h1>
+                            <p class="animated">The easiest way to travel to your location(s). Your agents can securely get your bus tickets from us.</p>
+                            <div class="btn-style-1">
+                                <a class="animated btn-1-padding-5" asp-action="contact" asp-controller="home">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="single-slider-img single-slider-img-6">
+                            <img class="animated" src="~/images/sliders/page-6.jpeg" alt="etransport">
+                            <div class="slider-product-price slider-product-position7 slider-animated-1 animated">
+                                <h3>
+                                    Fast
+                                    <span class="mrg-top">Secure </span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-area pt-30 pb-75">
+    <div class="custom-container">
+        <div class="product-area-border mb-10">
+            <div class="section-title-timer-wrap mb-10">
+                <div class="section-title-1">
+                    <h4>BOOK A SEAT</h4>
+                </div>
+            </div>
+            <div class="mb-10">
+                <form asp-action="SearchTrip" asp-controller="Home" method="post">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Departure From</label>
+                            <select name="TakeOffPoint" class="form-control" required>
+
+                                <option value="@Location.Abeokuta">Abeokuta</option>
+                                <option value="@Location.Lagos"> Lagos </option>
+                                <option value="@Location.Abuja"> Abuja</option>
+                                <option value="@Location.Ibadan">Ibadan</option>
+
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label>Arrival In</label>
+                            <select name="LandingPoint" class="form-control" required>
+
+                                <option value="@Location.Abeokuta">Abeokuta</option>
+                                <option value="@Location.Lagos"> Lagos </option>
+                                <option value="@Location.Abuja"> Abuja</option>
+                                <option value="@Location.Ibadan">Ibadan</option>
+
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label>Travel Date</label>
+                            <input type="date" placeholder="Select" name="TakeOffTime" required>
+                        </div>
+                        <div class="mt-10">
+
+                            <button class="btn btn-danger sbb" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+@*@if (Model != null)
+{
+    <h4>List of available trips</h4>
+    <hr />
+
+    <table class="table  table-bordered table-striped table table-light table-hover">
+
+        <thead>
+            <tr>
+                <th>Trip Reference</th>
+                <th>From</th>
+                <th>Destination</th>
+                <th>Departure Time</th>
+                <th>Price</th>
+                <th>Select</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trip in Model)
+            {
+                <tr>
+                    <td> @trip.TripReference </td>
+                    <td> @trip.TakeOffPoint </td>
+                    <td> @trip.LandingPoint </td>
+                    <td> @trip.Price </td>
+                    <td> <a asp-area="" asp-controller="Trip" asp-action="BookTicket">Book now</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}*@
+
+<div class="container-fluid mt-10">
+    <div class="row ">
+        <a asp-action="" asp-controller="Home">
+            <img src="~/images/basebanner.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+        </a>
+    </div>
+</div>
+<div class="container-fluid bg-3 text-center mt-10">
+    <h3>Major Cities in Nigeria at a Glance</h3><br>
+    <div class="row">
+        <div class="col-sm-3 ">
+            <img src="~/images/Destinations-Ilorin.jpg" class="img-responsive img-rounded " style="width:100%" alt="Image">
+            <p>Ilorin, Nigeria</p>
+        </div>
+        <div class="col-sm-3">
+            <img src="~/images/Destinations-Jos.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+            <p>Jos, Nigeria</p>
+        </div>
+        <div class="col-sm-3">
+            <img src="~/images/Destinations-Lagos.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+            <p>Lagos, Nigeria</p>
+        </div>
+        <div class="col-sm-3">
+            <img src="~/images/Destinations-Owerri.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+            <p>Owerri, Nigeria</p>
+        </div>
+    </div>
+    <hr>
+</div>
+
+
+<div class="container-fluid bg-3 text-left">
+    <h3>Today's offers</h3><br>
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <a href="#">
+                <img src="~/images/offer1.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+                <p><h4>Relax before the runway</h4></p>
+                <p>CodeLearners Admirals Club® lounges are reopening with new improvements to reinforce your well-being</p>
+                <strong>Visit CodeLearners Admirals Club </strong>
+            </a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a href="#">
+                <img src="~/images/offer 2.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+                <p><h4>Earn up to 5,000 bonus miles</h4></p>
+                <p>Don’t miss out on savings and bonus miles with Avis and Budget on  3+ bus booking</p>
+                <strong>Book your bus ticket by January 30, 2022</strong>
+            </a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a href="#">
+                <img src="~/images/offer 3.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+                <p><h4>Unlock secret vacations savings</h4>
+                <p>Book  a Bus Vacations package with our biggest discounts and bonus miles</p>
+                <strong>Offer ends February 16, 2022</strong>
+            </a>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="container-fluid text-left">
+    <div class="row">
+        <div class="col-sm-4 text-left">
+            <p><h3>News and offers</h3></p>
+            <a href="#">Travel credits and how to use them >></a><p></p>
+            <a href="#">Earn AAdvantage® miles and savings faster  >></a><p></p>
+            <a href="#">Shop online for your chance to win 100K miles >></a><p></p>
+            <a href="#"> More specials >></a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <p><h3>More miles, more trips</h3></p>
+            <a href="#">
+                <img src="~/images/offer 4.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+                <p>Earn up to 100,000 bonus miles when you buy tickets </p>
+                Ends September 30, 2022
+            </a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <p><h3>Earn miles for travel</h3></p>
+            <a href="#">
+                <img src="~/images/offer 5.jpg" class="img-responsive img-rounded" style="width:100%" alt="Image">
+                <p>Earn 50,000 bonus miles after qualifying purchases</p>
+                Learn more
+            </a>
+        </div>
+    </div>
+    <hr>
+</div>
+
+
+<div class="testimonial-area pb-75">
+    <div class="custom-container">
+        <div class="section-title-btn-wrap mb-35">
+            <div class="section-title-1">
+                <h2 class="font-weight-light">Our Passengers Always Speak for Us</h2>
+            </div>
+            <div class="btn-style-2 mrg-top-xs">
+                <a href="#">View all reviews <i class="far fa-long-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="testimonial-active-1 nav-style-2 nav-style-2-modify-1">
+            <div class="testimonial-plr-1">
+                <div class="single-testimonial">
+                    <div class="single-sidebar-post justify-content-center">
+                        @*<div class="sidebar-post-img">
+                                <a href="blog-details.html"><img src="~/assets/images/blog/bolajiavatar.jpeg" alt=""></a>
+                            </div>*@
+
+                        <p> <h4 class="font-italic">eTransport is surely the best place you can book your tickets. </h4></p>
+                    </div>
+                    <div class="client-info">
+                        <h5 class="text-primary">Abass</h5>
+                        <span>Ibadan, Nigeria</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-plr-1">
+                <div class="single-testimonial">
+                    <div class="single-sidebar-post justify-content-center">
+                        @*<div class="sidebar-post-img">
+                                <a href="blog-details.html"><img src="~/assets/images/blog/fmpic.jpg" alt=""></a>
+                            </div>*@
+
+                        <p> <h4 class="font-italic">This is a great Transport Company. Their reception is reactive and kind.</h4></p>
+                    </div>
+                    <div class="client-info">
+                        <h5 class="text-primary">Dada Muftah</h5>
+                        <span>Abeokuta, Nigeria</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-plr-1">
+                <div class="single-testimonial">
+                    <div class="single-sidebar-post justify-content-center">
+                        @*<div class="sidebar-post-img">
+                                <a href="blog-details.html"><img src="~/assets/images/blog/fmpic.jpg" alt=""></a>
+                            </div>*@
+
+                        <p> <h4 class="font-italic">In seconds, you get your ticket. Support is astonishing.</h4></p>
+                    </div>
+                    <div class="client-info">
+                        <h5 class="text-primary">Amotu Omi</h5>
+                        <span>Omi-Adio, Nigeria</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="contact-area bg-gray-2">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
+                <div class="single-contact-wrap text-center">
+                    <h4>Office location</h4>
+                    <p>
+                        Abeokuta, Nigeria
+                    </p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
+                <div class="single-contact-wrap text-center">
+                    <h4>Work inquiries</h4>
+                    <p> support@etransport.com</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
+                <div class="single-contact-wrap text-center">
+                    <h4>Call us</h4>
+                    <p> +234-7031-905-878/p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12 col-sm-6">
+                <div class="single-contact-wrap text-center">
+                    <h4>Open hours</h4>
+                    <p>24 Hours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,90 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Admin";
+}
+@using TransportManagementSystem.Enums
+<div class="breadcrumb-area breadcrumb-area-padding-2 bg-gray-2">
+    <div class="custom-container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a asp-controller="home" asp-action="index">Home</a>
+                </li>
+                <li class="active">register </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="login-register-area pt-75 pb-75">
+    <div class="container">
+        <div class="login-register-wrap">
+            <div class="login-register-title text-center">
+                <h1>Schedule Trip</h1>
+            </div>
+            <div class="login-register-form">
+                <form asp-action="ScheduleTrip">
+                    <input type="hidden" name="BusId" value="@Context.Request.RouteValues["id"]" />
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+
+                            <div class="login-register-input-style input-style">
+                                <label class="control-label">From</label>
+                                <select name="TakeOffPoint" class="form-control">
+
+                                    <option value="@Location.Abeokuta">Abeokuta</option>
+                                    <option value="@Location.Lagos"> Lagos </option>
+                                    <option value="@Location.Abuja"> Abuja</option>
+                                    <option value="@Location.Ibadan">Ibadan</option>
+
+                                </select>
+                            </div>
+                            <div class="login-register-input-style input-style">
+
+                                <label class="control-label">From</label>
+                                <select name="LandingPoint" class="form-control">
+
+                                    <option value="@Location.Abeokuta">Abeokuta</option>
+                                    <option value="@Location.Lagos"> Lagos </option>
+                                    <option value="@Location.Abuja"> Abuja</option>
+                                    <option value="@Location.Ibadan">Ibadan</option>
+
+                                </select>
+
+
+                            </div>
+                            <div class="login-register-input-style input-style">
+                                <label>Departure Time*</label>
+                                <input type="date" name="TakeOffTime" required>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="login-register-input-style input-style">
+                                <label>Landing Time *</label>
+                                <input type="date" name="LandingTime" required>
+                            </div>
+                            <div class="login-register-input-style input-style">
+                                <label>Price *</label>
+                                <input type="number" name="Price" required>
+                            </div>
+                            <div class="login-register-input-style input-style">
+                                <label>Driver *</label>
+
+                                <select name="DriverId" class="form-control" asp-items="ViewBag.Drivers" required>
+                                    <option value="">--Select Driver--</option>
+                                </select>
+                            </div>
+
+                            <div class="login-register-btn">
+                                <button type="submit">Register</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

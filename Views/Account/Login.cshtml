@@ -1,0 +1,50 @@
+﻿@{
+}
+<div class="breadcrumb-area breadcrumb-area-padding-2 bg-gray-2">
+    <div class="custom-container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a asp-controller="home" asp-action="index">Home</a>
+                </li>
+                <li class="active">login </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="login-register-area pt-75 pb-75">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="login-register-wrap login-register-gray-bg">
+                    <div class="login-register-title">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="login-register-form">
+                        <form asp-action="Login">
+                            <div class="login-register-input-style input-style input-style-white">
+                                <label>Username or email address *</label>
+                                <input type="email" name="Email" required>
+                            </div>
+                            <div class="login-register-input-style input-style input-style-white">
+                                <label>Password *</label>
+                                <input type="password" name="Password" required>
+                            </div>
+                            <div class="lost-remember-wrap">
+                                <div class="lost-wrap">
+                                    <a asp-controller="account" asp-action="forgotpassword">Forgot password?</a>
+                                </div>
+                                <div class="lost-wrap">
+                                    <a asp-controller="account" asp-action="RegisterPassenger">Sign up</a>
+                                </div>
+                            </div>
+                            <div class="login-register-btn">
+                                <button id="loginSubmit" type="submit">Log in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

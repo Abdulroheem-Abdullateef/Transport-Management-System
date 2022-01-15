@@ -1,0 +1,185 @@
+﻿
+@model TransportManagementSystem.Models.BookingDTO
+
+@*
+    <div class="container col-sm-12 justify-content-center">
+        <div class="alert alert-success">
+            <strong>Success!</strong> Thanks for booking a seat.
+        </div>
+        <div class="card border-dark mb-0 " style="max-width: 28rem; ">
+            <div class="card-header bg-dark border-dark text-white text-center "><strong>Booking details</strong></div>
+            <div class="card-body bg-dark text-dark">
+                <h5 class="card-title">
+                    <li class="list-group-item ">Booking Number : @Model.BookingReference</li>
+                </h5>
+                <p class="card-text">
+                    <ul class="list-group">
+
+                        <li class="list-group-item ">Firstname : @Model.PassengerName</li>
+                        <li class="list-group-item ">Departure : @Model.TakeOffPoint</li>
+                        <li class="list-group-item ">Arrival : @Model.LandingPoint</li>
+                        <li class="list-group-item ">Booking Type : @Model.BusType</li>
+                        <li class="list-group-item ">Booking Date : @Model.TakeOffTime.ToLongDateString()</li>
+                        <li class="list-group-item ">Trip Reference : @Model.TripReference</li>
+                        <li class="list-group-item ">Flight Price :&#8358 @Model.Price</li>
+                        <li class="list-group-item ">Departure Date : @Model.TakeOffTime.ToLongDateString()</li>
+
+
+                    </ul>
+                </p>
+            </div>
+            <div class="card-footer bg-dark border-dark text-center"><a href="#" class="btn btn-light">Print</a></div>
+        </div>
+    </div>*@
+
+
+<div class="content d-flex flex-column flex-column-fluid " id="kt_content">
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class="container">
+            <div class="card card-custom overflow-hidden" style="background-color:coral">
+                <div class="card-body invoice-6 p-0 ">
+                    <!--begin::Invoice-->
+                    <div class="invoice-6-container bgi-size-contain bgi-no-repeat bgi-position-y-top bgi-position-x-center" style="background-image: url(assets/media/svg/shapes/abstract-10.svg);">
+                        <div class="container">
+                            <div class="row justify-content-center py-8 px-8 py-md-27 px-md-0">
+                                <div class="col-md-9">
+                                    <!--begin::Invoice header-->
+                                    <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-40">
+                                        <h1 class="display-3 font-weight-boldest text-white mb-5 mb-md-0">INVOICE</h1>
+                                        <div class="d-flex flex-column px-0 text-right">
+                                            <span class="d-flex flex-column font-size-h5 font-weight-bold text-white align-items-center align-items-md-end">
+                                                <span class="mb-2">Reciept # @Model.BookingReference</span>
+                                                <span>@DateTime.Now.ToLongDateString()</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--end::Invoice header-->
+                                    <!--begin::Invoice body-->
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr class="font-weight-boldest title-color">
+                                                    <td class="align-middle font-size-h4 pl-0 border-0 pb-10">DESCRIPTION</td>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="font-size-h5 font-weight-bolder text-white">
+                                                    <td class="align-middle pl-0 border-0 py-4">Name</td>
+                                                    <td class="align-middle font-size-lg text-right border-0 py-4">@Model.PassengerName</td>
+                                                    <td class="align-middle font-size-lg text-right border-0 py-4"></td>
+                                                    <td class="align-middle text-right text-primary font-weight-boldest font-size-h5 pr-0 border-0 py-4">@Model.Address</td>
+                                                </tr>
+                                                <tr class="font-size-h5 font-weight-bolder text-white">
+                                                    <td class="align-middle pl-0 border-0 py-4">Depart-From ---- Travelling-To</td>
+                                                    <td class="align-middle font-size-lg text-right border-0 py-4">@Model.TakeOffPoint</td>
+                                                    <td class="align-middle font-size-lg text-right border-0 py-4"></td>
+                                                    <td class="align-middle text-right border-0 text-primary font-weight-boldest font-size-h5 pr-0 py-4">@Model.LandingPoint</td>
+                                                </tr>
+                                                <tr class="font-size-h5 font-weight-bolder text-white">
+                                                    <td class="align-middle pl-0 border-0 py-4">Date</td>
+                                                    <td class="align-middle font-size-lg text-right border-0 py-4">@Model.TakeOffTime.ToLongDateString()</td>
+                                                    <td class="align-middle font-size-lg text-right border-0 py-4"></td>
+                                                    <td class="align-middle text-right border-0 text-primary font-weight-boldest font-size-h5 pr-0 py-4">@Model.TakeOffTime.ToLongTimeString()</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--end::Invoice body-->
+                                    <div class="border-bottom w-100 my-13 opacity-15"></div>
+                                    <!--begin::Invoice total-->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column text-white mb-5 mb-md-0">
+                                                <div class="font-weight-boldest font-size-h4 mb-3 title-color">TRIP INFORMATION</div>
+                                                <div class="table-responsive">
+                                                    <table class="table font-size-h5">
+                                                        <tbody>
+                                                            <tr class="text-white">
+                                                                <td class="font-weight-boldest border-0 pl-0 w-50">Booking Type:</td>
+                                                                <td class="border-0">@Model.BusType</td>
+                                                            </tr>
+                                                            <tr class="text-white">
+                                                                <td class="font-weight-boldest border-0 pl-0 w-50">Bus Model</td>
+                                                                <td class="border-0">@Model.BusModel</td>
+                                                            </tr>
+                                                            <tr class="text-white">
+                                                                <td class="font-weight-boldest border-0 pl-0 w-50">Trip Reference:</td>
+                                                                <td class="border-0">@Model.TripReference</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="table-responsive">
+                                                <table class="table text-md-right font-weight-boldest">
+                                                    <tbody>
+                                                        <tr>
+                                                            @*<td class="align-middle title-color font-size-lg border-0 pt-0 pl-0 w-50">SUBTOTAL</td>
+                                <td class="align-middle text-primary font-size-h3 border-0 pt-0">$63800.00</td>*@
+                                                        </tr>
+                                                        <tr>
+                                                            @* <td class="align-middle title-color font-size-h4 border-0 py-7 pl-0 w-50">TAXES</td>
+                                <td class="align-middle text-primary font-size-h3 border-0 py-7">$15.00</td>*@
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle title-color font-size-h4 border-0 pl-0 w-50">GRAND TOTAL</td>
+                                                            <td class="align-middle text-primary font-size-h2 border-0">&#8358 @Model.Price</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Invoice total-->
+                                    <!--begin::Invoice note-->
+                                    <div class="d-flex flex-wrap align-items-end mt-30">
+                                        <div>
+                                            <div class="font-size-h4 font-weight-boldest title-color mb-3">NOTE</div>
+                                            <div class="font-size-h6 font-weight-bold note-color max-w-375px">Our key focus is Transportation/Integrated logistics. This is all that we do, so we strive to do it right. It is this commitment that sets us apart as the leading indigenous transport/integrated logistics firm in Nigeria, and one of the best in sub Sharan Africa. With over 500 fleet, we are visible in all the states of Nigeria and the West Coast of Africa</div>
+                                        </div>
+                                        <button type="button" class="btn btn-danger font-weight-bolder font-size-lg ml-sm-auto mt-5 px-5 py-4">Pay Now</button>
+
+                                    </div>
+                                    <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
+                                        <div class="col-md-9">
+                                            <div class="d-flex justify-content-between">
+                                                <button type="button" class="btn btn-light-primary font-weight-bold" onclick="window.print();">Print Invoice</button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Invoice note-->
+                                    <!--begin::Invoice footer-->
+                                    <div class="d-flex justify-content-between flex-column flex-sm-row text-center text-sm-left mt-30">
+                                        <div class="font-size-h2 font-weight-bolder text-white">Thanks For Your Booking</div>
+                                        <!--begin::Logo-->
+                                        <a href="#" class="max-w-150px mx-auto mx-sm-0 mt-5 mt-sm-0">
+                                            <span class="svg-icon svg-icon-full svg-logo-white">
+                                                <a asp-area="" asp-controller="Home" asp-action="Index">Back to Home page</a>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                        </a>
+                                        <!--end::Logo-->
+                                    </div>
+                                    <!--end::Invoice footer-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Invoice-->
+                </div>
+            </div>
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Entry-->
+</div>
+
+
+
+<br>

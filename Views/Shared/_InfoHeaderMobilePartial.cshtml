@@ -1,0 +1,53 @@
+﻿<div class="mobile-header-active mobile-header-wrapper-style">
+    <div class="mobile-header-wrapper-inner">
+        <div class="mobile-header-top">
+            <div class="mobile-header-logo">
+                <a asp-controller="home" asp-action="index"><img src="~/images/ncb_main.png" alt="logo"></a>
+            </div>
+            <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                <button class="close-style search-close">
+                    <i class="icon-top"></i>
+                    <i class="icon-bottom"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-header-content-area">
+            <div class="covid-update covid-update-mobile mobile-header-border">
+                @*<p><a href="#">ePinMart</a> We are eager to hear from you.</p>*@
+            </div>
+            <div class="mobile-search search-style-3 mobile-header-border">
+                <form action="#">
+                    <input type="text" placeholder="Search…">
+                    <button type="submit"> <i class="far fa-search"></i> </button>
+                </form>
+            </div>
+            <div class="mobile-menu-wrap mobile-header-border">
+                <!-- mobile menu start -->
+                <nav>
+                    <ul class="mobile-menu">
+                        <li><a asp-action="index" asp-controller="home">Home</a></li>
+        
+                        <li><a asp-action="about" asp-controller="home">About</a></li>
+                        <li><a asp-action="contact" asp-controller="home">FAQ</a></li>
+                        <li><a asp-action="Faq" asp-controller="home">Contact</a></li>
+                    </ul>
+                </nav>
+                <!-- mobile menu end -->
+            </div>
+            <div class="mobile-header-info-wrap mobile-header-border">
+                <div class="single-mobile-header-info">
+                    <a target="_blank" href="https://www.google.com/maps"> Office location </a>
+                </div>
+                <div class="single-mobile-header-info">
+                    <a href="tel:+2347031905878">(+234) - 7031 - 905 - 878 </a>
+                </div>
+            </div>
+            <div class="mobile-social-icon">
+                <a class="facebook" target="_blank" href="https://web.facebook.com/etransport/"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" target="_blank" href="https://twitter.com/etransport"><i class="fab fa-twitter"></i></a>
+                <a class="linkedin" target="_blank" href="https://www.linkedin.com/company/13037029/"><i class="fab fa-linkedin"></i></a>
+                <a class="instagram" target="_blank" href="https://instagram.com/etransport/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

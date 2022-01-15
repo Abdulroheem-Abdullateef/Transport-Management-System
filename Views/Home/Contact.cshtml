@@ -1,0 +1,287 @@
+﻿<div class="breadcrumb-area breadcrumb-area-padding-2 bg-gray-2">
+    <div class="custom-container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a asp-action="index" asp-controller="home">Home</a>
+                </li>
+                <li class="active">Contact Us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="contact-us-area pt-65 pb-55">
+    <div class="container">
+        <div class="section-title-2 mb-45">
+            <h2>We're always eager to hear from you!</h2>
+            <p>You can call us in working time or visit our office. All mails will get the response within 24 hours.  We offer discount to our estemed customers when you purchase a high quantity of our products. Lets do business.Love to hear from you! </p>
+        </div>
+        <div class="contact-info-wrap-2 mb-40">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 col-sm-5">
+                    <div class="single-contact-info3-wrap mb-30">
+                        <div class="single-contact-info3-icon">
+                            <i class="fal fa-map-marker-alt"></i>
+                        </div>
+                        <div class="single-contact-info3-content">
+                            <h3>Address</h3>
+                            <p class="width-1">
+                                No 1, Adenekan street, Gbonagun,
+                                Obantoko, Abeokuta, Nigeria
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 col-sm-7">
+                    <div class="single-contact-info3-wrap mb-30">
+                        <div class="single-contact-info3-icon">
+                            <i class="fal fa-phone"></i>
+                        </div>
+                        <div class="single-contact-info3-content">
+                            <h3>Contact</h3>
+                            <p> Mobile: <span>(+234) - 706 585 1674</span></p>
+                            <p> Hotline: <span>(+234) - 806 406 1644</span></p>
+                            <p> Mail: <span>support@epinmart.com</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 col-sm-12">
+                    <div class="single-contact-info3-wrap mb-30">
+                        <div class="single-contact-info3-icon">
+                            <i class="fal fa-clock"></i>
+                        </div>
+                        <div class="single-contact-info3-content">
+                            <h3>Hour of operation</h3>
+                            <p> Any time. We are open 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-map pb-70">
+            <div id="map"></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-8 col-lg-10 ml-auto mr-auto">
+                <div class="contact-from-area  padding-20-row-col">
+                    <h3>Ask us anything here</h3>
+                    <form class="contact-form-style text-center" id="contact-form" action="assets/mail-php/mail.php" method="post">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input name="name" placeholder="First Name" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input name="email" placeholder="Your Email" type="email">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input name="telephone" placeholder="Your Phone" type="tel">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input name="subject" placeholder="Subject" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="textarea-style mb-30">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+                                <button class="submit submit-auto-width" type="submit">Send message</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="form-messege"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYNfZ-tL7Q_kGLMO4Y5xz4lCl70V74AF4"></script>
+    <script>
+        function init() {
+            var mapOptions = {
+                zoom: 11,
+                scrollwheel: false,
+                center: new google.maps.LatLng(40.709896, -73.995481),
+                styles: [{
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#e9e9e9"
+                            },
+                            {
+                                "lightness": 17
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#f5f5f5"
+                            },
+                            {
+                                "lightness": 20
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 17
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 29
+                            },
+                            {
+                                "weight": 0.2
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 18
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.local",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 16
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#f5f5f5"
+                            },
+                            {
+                                "lightness": 21
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#dedede"
+                            },
+                            {
+                                "lightness": 21
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{
+                                "visibility": "on"
+                            },
+                            {
+                                "color": "#ffffff"
+                            },
+                            {
+                                "lightness": 16
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                                "saturation": 36
+                            },
+                            {
+                                "color": "#333333"
+                            },
+                            {
+                                "lightness": 40
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.icon",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#f2f2f2"
+                            },
+                            {
+                                "lightness": 19
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                                "color": "#fefefe"
+                            },
+                            {
+                                "lightness": 20
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{
+                                "color": "#fefefe"
+                            },
+                            {
+                                "lightness": 17
+                            },
+                            {
+                                "weight": 1.2
+                            }
+                        ]
+                    }
+                ]
+            };
+            var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(40.709896, -73.995481),
+                map: map,
+                icon: 'assets/images/icon-img/2.png',
+                animation: google.maps.Animation.BOUNCE,
+                title: 'Snazzy!'
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', init);
+    </script>
+}

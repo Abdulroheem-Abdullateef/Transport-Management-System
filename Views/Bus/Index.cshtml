@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Admin";
+}
+@model IEnumerable<TransportManagementSystem.Models.BusDTO>
+
+
+
+
+<div class="card-header" style="background-color:aliceblue;">
+    <div class="card-title">
+        <h1 class="text-center">Buses</h1>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.AvailabilityStatus)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TripStatus)
+            </th>
+
+
+            <th>
+                Schedule Trip
+            </th>
+
+            <th>
+                Update
+            </th>
+            <th>
+                Details
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => student.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.RegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.BusType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.AvailabilityStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.TripStatus)
+            </td>
+            <td>
+                <a asp-action="ScheduleTrip" asp-controller="Trip"   asp-route-id="@student.Id">Schedule </a>
+            </td>
+            <td>
+                <a asp-action="Update" asp-route-id="@student.Id">Update</a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@student.Id">Details</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<button style="background-color:wheat;"><a asp-controller="Bus" asp-action="RegisterBus">Register Bus</a> </button>
